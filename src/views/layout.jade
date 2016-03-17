@@ -1,21 +1,26 @@
 doctype html
 head
   meta(charset='utf-8')
-  meta(http-equiv='X-UA-Compatible', content='IE=edge')
-  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  
   block head
+    
+  link(rel='stylesheet', href='styles/styles.css')
 
-  //link(href='styles/vendor/bootstrap.min.css', rel='stylesheet')
-  //link(href='styles/main.css', rel='stylesheet')
-  link(href='styles/styles.css', rel='stylesheet')
-
-body
-  include ./includes/navbar.jade
+body 
   block content
-  include ./includes/footer.jade
+  .header
+    include ./includes/navbar
+  .splash-container
+    .splash
+      h1.splash-head Big Bold Text
+      p.splash-subhead
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p
+        a.pure-button.pure-button-primary(href='http://purecss.io') Get Started
+  .content-wrapper
+    block content
+    include ./includes/footer
 
-  //script(src='scripts/vendor/jquery-2.2.0.min.js')
-  //script(src='scripts/vendor/bootstrap.min.js')
-  //script(src='scripts/main.js')
   script(src='scripts/scripts.js')
   block scripts
